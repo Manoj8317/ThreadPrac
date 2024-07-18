@@ -4,18 +4,24 @@ public class SyncDemo {
         Thread t1=new Thread(new Runnable(){
             @Override
             public void run() {
+                long startTime=System.currentTimeMillis();
                 for(int i=0;i<=5;i++){
                     b.printBrackets('[',']');
                 }
+                long endTime=System.currentTimeMillis();
+                System.out.println("time taken"+"="+(endTime-startTime));
             }
         });
 
         Thread t2=new Thread(new Runnable(){
             @Override
             public void run() {
+                long startTime=System.currentTimeMillis();
                 for(int i=0;i<=5;i++){
                     b.printBrackets('{','}');
                 }
+                long endTime=System.currentTimeMillis();
+                System.out.println("time taken"+"="+(endTime-startTime));
             }
         });
 
@@ -34,5 +40,12 @@ class Brackets{
              }
          }
          System.out.println();
+         for(int i=0;i<10;i++){
+            try {
+                Thread.sleep(25);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
      }
 }

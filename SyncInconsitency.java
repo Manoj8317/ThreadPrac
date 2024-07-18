@@ -1,6 +1,6 @@
 public class SyncInconsitency {
     public static void main(String[] args) {
-        Brackets b=new Brackets();
+        Brackets2 b=new Brackets2();
         Thread t1=new Thread(new Runnable(){
             @Override
             public void run() {
@@ -24,7 +24,7 @@ public class SyncInconsitency {
     }
 }
 
-class Brackets{
+class Brackets2{
     public void  printBrackets(char open, char close){
          for(int i=0;i<10;i++){
              if(i<=5){
